@@ -176,6 +176,22 @@ client = genai.Client(api_key="YOUR_API_KEY")
 4. Provides optimization tips
 
 ---
+## 📸 Outputs
+
+<img width="696" height="370" alt="Screenshot 2026-03-22 231513" src="https://github.com/user-attachments/assets/728d1259-158b-43ff-93c6-af6a32bde71b" />
+
+<img width="744" height="419" alt="Screenshot 2026-03-22 231534" src="https://github.com/user-attachments/assets/f748114d-e70e-4dc6-94f6-6ca4c2a50d5c" />
+<img width="739" height="467" alt="Screenshot 2026-03-22 231546" src="https://github.com/user-attachments/assets/235110c8-9e4b-4540-9c15-07b531b9d5a5" />
+
+
+<img width="763" height="428" alt="Screenshot 2026-03-22 231554" src="https://github.com/user-attachments/assets/039ae49d-cf28-4c0c-80b3-7189e68be639" />
+
+
+<img width="770" height="472" alt="Screenshot 2026-03-22 231604" src="https://github.com/user-attachments/assets/84552e05-c610-438f-9d5d-12525f63e470" />
+
+<img width="835" height="478" alt="Screenshot 2026-03-22 231611" src="https://github.com/user-attachments/assets/4adaeeff-c0e5-44a0-bfd5-ebd26d36bc55" />
+<img width="855" height="474" alt="Screenshot 2026-03-22 231619" src="https://github.com/user-attachments/assets/19a94b61-9fd3-4ecf-a917-2a787c8207bf" />
+<img width="806" height="446" alt="Screenshot 2026-03-22 231625" src="https://github.com/user-attachments/assets/a19f224a-de65-47d6-a080-896765f58c66" />
 
 ## 📸 Features Explained
 
