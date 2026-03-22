@@ -1,0 +1,74 @@
+{% extends 'users/Userbase.html' %}
+{% block content %}
+
+<h2>AI Code & Diagram Generator</h2>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <!-- 🔁 MODE SELECTION -->
+    <div style="margin-bottom:15px;">
+        <label>
+            <input type="radio" name="mode" value="code_to_diagram"
+                {% if mode == "code_to_diagram" or not mode %}checked{% endif %}>
+            Code → Diagram
+        </label>
+
+        <label style="margin-left:20px;">
+            <input type="radio" name="mode" value="diagram_to_code"
+                {% if mode == "diagram_to_code" %}checked{% endif %}>
+            Diagram → Code
+        </label>
+    </div>
+
+    <!-- 🌐 LANGUAGE SELECTION -->
+    <div style="margin-bottom:15px;">
+        <label>Select Language:</label>
+        <select name="language">
+            <option value="Python" {% if language == "Python" %}selected{% endif %}>Python</option>
+            <option value="Java" {% if language == "Java" %}selected{% endif %}>Java</option>
+            <option value="C++" {% if language == "C++" %}selected{% endif %}>C++</option>
+            <option value="JavaScript" {% if language == "JavaScript" %}selected{% endif %}>JavaScript</option>
+        </select>
+    </div>
+
+    <!-- 📝 TEXT INPUT -->
+    <div style="margin-bottom:15px;">
+        <label>Paste your Code or PlantUML:</label><br>
+        <textarea name="user_input" rows="8" cols="80" required></textarea>
+    </div>
+
+    <!-- 📁 FILE UPLOAD -->
+    <div style="margin-bottom:15px;">
+        <label>Upload code file (optional):</label><br>
+        <input type="file" name="code_file">
+    </div>
+
+    <button type="submit" style="padding:8px 20px;">Generate</button>
+</form>
+
+<hr>
+
+<!-- ⚠️ ERROR MESSAGE -->
+{% if ai_response %}
+    <p style="color:red;"><strong>{{ ai_response }}</strong></p>
+{% endif %}
+
+<!-- 🖼 DIAGRAM OUTPUT -->
+{% if diagram_url %}
+    <h3>Generated Diagram:</h3>
+    <img src="{{ diagram_url }}" 
+         alt="Diagram"
+         style="border:1px solid #ccc; padding:10px; max-width:100%;">
+{% endif %}
+
+<!-- 💻 CODE OUTPUT -->
+{% if ai_response and not diagram_url %}
+    <h3>Generated Code:</h3>
+    <pre style="background:#f4f4f4; padding:15px; overflow:auto;">
+{{ ai_response }}
+    </pre>
+{% endif %}
+
+{% endblock %}
+
